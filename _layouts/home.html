@@ -4,8 +4,8 @@ layout: default
 <section class="home">
   <p class="home-eyebrow">{{ site.author.tagline }}</p>
   <h1 class="home-name">
-    <span class="home-name__first">{{ site.author.name | split: ' ' | first }}</span>
-    <em class="home-name__last">{{ site.author.name | split: ' ' | last }}</em>
+    <span class="home-name__first">{{ site.author.name }}</span>
+    {% if site.data.pii.last_name != "" %}<em class="home-name__last">{{ site.data.pii.last_name }}</em>{% endif %}
   </h1>
   <div class="home-rule" aria-hidden="true"></div>
   <p class="home-intro">{{ content | strip_html | strip }}</p>

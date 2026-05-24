@@ -156,7 +156,9 @@ def main() -> None:
         "  3. Ensure `_data/pii.yml` is in `.gitignore`.",
     ]
 
-    print("\n".join(lines))
+    output = "\n".join(lines)
+    print(output)               # stdout → Claude re-invocation context
+    print(output, file=sys.stderr)  # stderr → visible in transcript
     sys.exit(2)
 
 

@@ -1,7 +1,9 @@
 # Copy this file to _data/pii.yml and fill in your real values.
 # _data/pii.yml is gitignored and will never be committed.
-name: Your Name
-email: your@email.com
-phone: "+1 555-000-0000"
-address: "City, State ZIP"
-linkedin: "https://linkedin.com/in/your-handle"
+# Fields marked with "# pii: <description>" are PII-redacted placeholders.
+# Public version of each pii field is an empty string.
+last_name: ""                                # pii: last name
+email: ""                                    # pii: email address
+phone: ""                                    # pii: phone number
+address: ""                                  # pii: location shown on resume (city, state)
+linkedin: "https://linkedin.com/in/handle"   # pii: LinkedIn profile URL (optional — leave blank to omit)

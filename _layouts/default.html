@@ -28,7 +28,7 @@
   </main>
 
   <footer class="site-footer">
-    <span class="footer-meta">© {{ site.time | date: "%Y" }} {{ site.author.name }}</span>
+    <span class="footer-meta">© {{ site.time | date: "%Y" }} {{ site.author.name }}{% if site.data.pii.last_name != "" %} {{ site.data.pii.last_name }}{% endif %}</span>
     <span class="footer-dot" aria-hidden="true">·</span>
     <a href="{{ '/feed.xml' | relative_url }}" class="footer-link">RSS</a>
   </footer>

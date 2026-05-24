@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% if site.data.pii %}{{ site.data.pii.name }} — {% endif %}Resume · {{ site.title }}</title>
+  <title>{% if site.data.pii and site.data.pii.last_name != "" %}{{ site.author.name }} {{ site.data.pii.last_name }} — {% endif %}Resume · {{ site.title }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
@@ -13,18 +13,12 @@
 
   <header class="resume-header">
     {% if site.data.pii %}
-      <h1 class="resume-name">{{ site.data.pii.name }}</h1>
+      <h1 class="resume-name">{{ site.author.name }}{% if site.data.pii.last_name != "" %} {{ site.data.pii.last_name }}{% endif %}</h1>
       <p class="resume-contact">
-        <span>{{ site.data.pii.email }}</span>
-        <span class="resume-sep" aria-hidden="true">·</span>
-        <span>{{ site.data.pii.phone }}</span>
-        <span class="resume-sep" aria-hidden="true">·</span>
-        <span>{{ site.data.pii.address }}</span>
-        {% if site.data.pii.linkedin %}
-          <span class="resume-sep" aria-hidden="true">·</span>
-          <a href="{{ site.data.pii.linkedin }}">LinkedIn</a>
-        {% endif %}
-        <span class="resume-sep" aria-hidden="true">·</span>
+        {% if site.data.pii.email != "" %}<span>{{ site.data.pii.email }}</span><span class="resume-sep" aria-hidden="true">·</span>{% endif %}
+        {% if site.data.pii.phone != "" %}<span>{{ site.data.pii.phone }}</span><span class="resume-sep" aria-hidden="true">·</span>{% endif %}
+        {% if site.data.pii.address != "" %}<span>{{ site.data.pii.address }}</span><span class="resume-sep" aria-hidden="true">·</span>{% endif %}
+        {% if site.data.pii.linkedin and site.data.pii.linkedin != "" %}<a href="{{ site.data.pii.linkedin }}">LinkedIn</a><span class="resume-sep" aria-hidden="true">·</span>{% endif %}
         <a href="https://github.com/{{ site.author.github }}">GitHub</a>
       </p>
     {% else %}
