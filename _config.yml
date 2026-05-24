@@ -1,7 +1,12 @@
 title: Nick Isaacs
-description: Personal site
+description: Software engineer building infrastructure and tools.
 url: "https://nicky-isaacs.github.io"
 theme: minima
+
+author:
+  name: Nick Isaacs
+  tagline: Software Engineer
+  github: nicky-isaacs
 
 plugins:
   - jekyll-feed

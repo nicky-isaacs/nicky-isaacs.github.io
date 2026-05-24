@@ -3,43 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% if site.data.pii %}{{ site.data.pii.name }} — {% endif %}Resume</title>
-  <link rel="stylesheet" href="{{ "/assets/css/resume.css" | relative_url }}" />
+  <title>{% if site.data.pii %}{{ site.data.pii.name }} — {% endif %}Resume · {{ site.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/assets/css/resume.css' | relative_url }}" />
 </head>
 <body class="resume">
 
   <header class="resume-header">
     {% if site.data.pii %}
-      <h1>{{ site.data.pii.name }}</h1>
+      <h1 class="resume-name">{{ site.data.pii.name }}</h1>
       <p class="resume-contact">
-        {{ site.data.pii.email }}
-        &nbsp;&middot;&nbsp; {{ site.data.pii.phone }}
-        &nbsp;&middot;&nbsp; {{ site.data.pii.address }}
+        <span>{{ site.data.pii.email }}</span>
+        <span class="resume-sep" aria-hidden="true">·</span>
+        <span>{{ site.data.pii.phone }}</span>
+        <span class="resume-sep" aria-hidden="true">·</span>
+        <span>{{ site.data.pii.address }}</span>
         {% if site.data.pii.linkedin %}
-          &nbsp;&middot;&nbsp; <a href="{{ site.data.pii.linkedin }}">LinkedIn</a>
+          <span class="resume-sep" aria-hidden="true">·</span>
+          <a href="{{ site.data.pii.linkedin }}">LinkedIn</a>
         {% endif %}
+        <span class="resume-sep" aria-hidden="true">·</span>
+        <a href="https://github.com/{{ site.author.github }}">GitHub</a>
       </p>
     {% else %}
-      <h1>Resume</h1>
-      <p class="resume-notice">Contact information available upon request.</p>
+      <h1 class="resume-name">{{ site.author.name }}</h1>
+      <p class="resume-contact resume-contact--anon">
+        {{ site.author.tagline }} · Contact information available upon request
+      </p>
     {% endif %}
   </header>
 
   <section class="resume-section">
-    <h2>Experience</h2>
+    <h2 class="resume-section-title">Experience</h2>
     {% for job in site.data.resume.experience %}
     <div class="resume-entry">
-      <div class="resume-entry-header">
-        <span><strong>{{ job.role }}</strong> &mdash; {{ job.company }}</span>
-        <span class="resume-dates">
-          {{ job.start }}&ndash;{% if job.end == "present" %}Present{% else %}{{ job.end }}{% endif %}
-        </span>
+      <div class="resume-entry-top">
+        <div class="resume-entry-left">
+          <p class="resume-role">{{ job.role }}</p>
+          <p class="resume-company">{{ job.company }}{% if job.location %} · <span class="resume-location">{{ job.location }}</span>{% endif %}</p>
+        </div>
+        <p class="resume-dates">{{ job.start }}&thinsp;–&thinsp;{% if job.end == "present" %}Present{% else %}{{ job.end }}{% endif %}</p>
       </div>
-      {% if job.location %}<div class="resume-location">{{ job.location }}</div>{% endif %}
-      <p>{{ job.description }}</p>
       {% if job.highlights %}
-      <ul>
-        {% for item in job.highlights %}<li>{{ item }}</li>{% endfor %}
+      <ul class="resume-bullets">
+        {% for item in job.highlights %}
+        <li>{{ item }}</li>
+        {% endfor %}
       </ul>
       {% endif %}
     </div>
@@ -47,26 +58,38 @@
   </section>
 
   <section class="resume-section">
-    <h2>Education</h2>
+    <h2 class="resume-section-title">Education</h2>
     {% for edu in site.data.resume.education %}
     <div class="resume-entry">
-      <strong>{{ edu.degree }}</strong> &mdash; {{ edu.school }}, {{ edu.year }}
+      <div class="resume-entry-top">
+        <div class="resume-entry-left">
+          <p class="resume-role">{{ edu.degree }}</p>
+          <p class="resume-company">{{ edu.school }}</p>
+        </div>
+        <p class="resume-dates">{{ edu.year }}</p>
+      </div>
     </div>
     {% endfor %}
   </section>
 
   <section class="resume-section">
-    <h2>Skills</h2>
+    <h2 class="resume-section-title">Skills</h2>
     <dl class="resume-skills">
       {% for pair in site.data.resume.skills %}
-      <dt>{{ pair[0] | capitalize }}</dt>
-      <dd>{{ pair[1] | join: ", " }}</dd>
+      <div class="resume-skill-row">
+        <dt>{{ pair[0] | capitalize }}</dt>
+        <dd>
+          {% for item in pair[1] %}
+          <span class="skill-tag">{{ item }}</span>
+          {% endfor %}
+        </dd>
+      </div>
       {% endfor %}
     </dl>
   </section>
 
-  <nav class="screen-only resume-back">
-    <a href="{{ "/" | relative_url }}">&larr; Back to site</a>
+  <nav class="resume-nav screen-only">
+    <a href="{{ '/' | relative_url }}" class="resume-back">&larr; Back to site</a>
   </nav>
 
 </body>

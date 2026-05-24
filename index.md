@@ -2,4 +2,4 @@
 layout: home
 ---
 
-Hi, I'm Nick. Welcome to my site.
+I build infrastructure and tools that help engineers move fast — reliable systems, clean abstractions, and software that gets out of the way.

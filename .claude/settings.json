@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/pii-guard.py",
+            "statusMessage": "Scanning for PII..."
+          }
+        ]
+      }
+    ]
+  }
+}
