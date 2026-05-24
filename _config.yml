@@ -1,0 +1,7 @@
+title: Nick Isaacs
+description: Personal site
+url: "https://nicky-isaacs.github.io"
+theme: minima
+
+plugins:
+  - jekyll-feed
