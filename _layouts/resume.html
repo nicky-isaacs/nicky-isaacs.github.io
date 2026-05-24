@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if site.data.pii %}{{ site.data.pii.name }} — {% endif %}Resume</title>
+  <link rel="stylesheet" href="{{ "/assets/css/resume.css" | relative_url }}" />
+</head>
+<body class="resume">
+
+  <header class="resume-header">
+    {% if site.data.pii %}
+      <h1>{{ site.data.pii.name }}</h1>
+      <p class="resume-contact">
+        {{ site.data.pii.email }}
+        &nbsp;&middot;&nbsp; {{ site.data.pii.phone }}
+        &nbsp;&middot;&nbsp; {{ site.data.pii.address }}
+        {% if site.data.pii.linkedin %}
+          &nbsp;&middot;&nbsp; <a href="{{ site.data.pii.linkedin }}">LinkedIn</a>
+        {% endif %}
+      </p>
+    {% else %}
+      <h1>Resume</h1>
+      <p class="resume-notice">Contact information available upon request.</p>
+    {% endif %}
+  </header>
+
+  <section class="resume-section">
+    <h2>Experience</h2>
+    {% for job in site.data.resume.experience %}
+    <div class="resume-entry">
+      <div class="resume-entry-header">
+        <span><strong>{{ job.role }}</strong> &mdash; {{ job.company }}</span>
+        <span class="resume-dates">
+          {{ job.start }}&ndash;{% if job.end == "present" %}Present{% else %}{{ job.end }}{% endif %}
+        </span>
+      </div>
+      {% if job.location %}<div class="resume-location">{{ job.location }}</div>{% endif %}
+      <p>{{ job.description }}</p>
+      {% if job.highlights %}
+      <ul>
+        {% for item in job.highlights %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="resume-section">
+    <h2>Education</h2>
+    {% for edu in site.data.resume.education %}
+    <div class="resume-entry">
+      <strong>{{ edu.degree }}</strong> &mdash; {{ edu.school }}, {{ edu.year }}
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="resume-section">
+    <h2>Skills</h2>
+    <dl class="resume-skills">
+      {% for pair in site.data.resume.skills %}
+      <dt>{{ pair[0] | capitalize }}</dt>
+      <dd>{{ pair[1] | join: ", " }}</dd>
+      {% endfor %}
+    </dl>
+  </section>
+
+  <nav class="screen-only resume-back">
+    <a href="{{ "/" | relative_url }}">&larr; Back to site</a>
+  </nav>
+
+</body>
+</html>

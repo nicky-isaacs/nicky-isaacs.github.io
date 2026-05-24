@@ -1,0 +1,45 @@
+experience:
+  - company: Acme Corp
+    role: Senior Software Engineer
+    start: 2022-01
+    end: present
+    location: Remote
+    description: >
+      Led platform infrastructure for internal developer tooling serving 200+ engineers.
+    highlights:
+      - Reduced CI pipeline duration by 60% via parallelization.
+      - Owned on-call rotation for core API (99.95% uptime SLA).
+      - Drove adoption of internal IaC standards across 12 product teams.
+
+  - company: Widget Co
+    role: Software Engineer
+    start: 2019-06
+    end: 2021-12
+    location: San Francisco, CA
+    description: >
+      Full-stack engineer on the consumer-facing web product.
+    highlights:
+      - Built real-time notification system serving 2M daily active users.
+      - Migrated monolith authentication to OAuth 2.0, unblocking mobile team.
+      - Mentored two junior engineers through code review and pair programming.
+
+  - company: Startup Inc
+    role: Junior Software Engineer
+    start: 2018-07
+    end: 2019-05
+    location: San Francisco, CA
+    description: >
+      Early engineer on a B2B SaaS product.
+    highlights:
+      - Implemented billing integration with Stripe, enabling first paid customers.
+      - Wrote end-to-end test suite that caught three critical regressions pre-launch.
+
+education:
+  - school: University of California, Davis
+    degree: B.S. Computer Science
+    year: 2018
+
+skills:
+  languages: [Ruby, Python, TypeScript, Go]
+  tools: [Rails, React, PostgreSQL, Kubernetes, Terraform]
+  practices: [TDD, CI/CD, System Design, Technical Writing]
