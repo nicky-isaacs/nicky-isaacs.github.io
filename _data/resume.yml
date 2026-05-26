@@ -1,4 +1,13 @@
 experience:
+  - company: Datadog
+    role: Software Engineer
+    start: 2025-01
+    end: present
+    highlights:
+      - Prototyped and led an AI-assisted rewrite of a Python monolith to our internal service architecture; routes are continuously migrated with human review gates ensuring correctness at each step.
+      - Brought in cross-team to lead a Spark 4.1 upgrade — delivered in 3 months (6× faster than the previous such upgrade), achieving compliance goals and protecting millions in revenue from enterprise and government customers with strict compliance requirements.
+      - Expanded the internal coding agent to Datadog engineers, unlocking thousands of previously unreachable agent trajectories now used to improve the agent's performance.
+
   - company: Collie
     role: Cofounder / CTO
     start: 2024-02
@@ -10,7 +19,7 @@ experience:
       - Landed 4 B2B pilot customers.
 
   - company: Frec
-    role: Sr. Software Engineer
+    role: Software Engineer
     start: 2022
     end: 2024
     highlights:
@@ -19,7 +28,7 @@ experience:
       - Advocated for and executed a plan to increase representation in the candidate pipeline and team.
 
   - company: MainStreet
-    role: Sr. Software Engineer
+    role: Software Engineer
     start: 2021
     end: 2022
     highlights:
@@ -29,7 +38,7 @@ experience:
       - Introduced testing culture using react-testing-library and supertest, now woven into the fabric of development.
 
   - company: Twitter
-    role: Sr. Software Engineer
+    role: Software Engineer
     start: 2016
     end: 2021
     highlights:
@@ -39,7 +48,7 @@ experience:
       - Mentored apprentices from non-traditional CS backgrounds through Twitter's apprenticeship program.
 
   - company: VictorOps
-    role: Software Engineer
+    role: Jr. Software Engineer
     start: 2014
     end: 2016
     highlights:
