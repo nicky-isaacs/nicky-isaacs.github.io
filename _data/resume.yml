@@ -4,9 +4,9 @@ experience:
     start: 2024-02
     end: 2024-10
     highlights:
-      - Cofounded a product to automatically build, maintain, and surface runbooks for on-call engineering teams.
-      - Raised an angel round to fund the initial build.
-      - Hired a full-time engineer and contractor to get the product into customers' hands.
+      - Built Collie to fix on-call's runbook problem — AI tooling that auto-generates and maintains documentation from production signals so engineers always have accurate context during an incident.
+      - Raised an angel round on early customer discovery before shipping the first version.
+      - Hired and led a team to get the product into customers' hands.
       - Landed 4 B2B pilot customers.
 
   - company: Frec
