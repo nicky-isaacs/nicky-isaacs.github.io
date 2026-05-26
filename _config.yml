@@ -8,5 +8,9 @@ author:
   tagline: Software Engineer
   github: nicky-isaacs
 
+exclude:
+  - CLAUDE.md
+  - Rakefile
+
 plugins:
   - jekyll-feed
