@@ -59,6 +59,7 @@
         <div class="resume-entry-left">
           <p class="resume-role">{{ edu.degree }}</p>
           <p class="resume-company">{{ edu.school }}</p>
+          {% if edu.note %}<p class="resume-note">{{ edu.note }}</p>{% endif %}
         </div>
         <p class="resume-dates">{{ edu.year }}</p>
       </div>

@@ -1,45 +1,59 @@
 experience:
-  - company: Acme Corp
-    role: Senior Software Engineer
-    start: 2022-01
-    end: present
-    location: Remote
-    description: >
-      Led platform infrastructure for internal developer tooling serving 200+ engineers.
+  - company: Collie
+    role: Cofounder / CTO
+    start: 2024-02
+    end: 2024-10
     highlights:
-      - Reduced CI pipeline duration by 60% via parallelization.
-      - Owned on-call rotation for core API (99.95% uptime SLA).
-      - Drove adoption of internal IaC standards across 12 product teams.
+      - Cofounded a product to automatically build, maintain, and surface runbooks for on-call engineering teams.
+      - Raised an angel round to fund the initial build.
+      - Hired a full-time engineer and contractor to get the product into customers' hands.
+      - Landed 4 B2B pilot customers.
 
-  - company: Widget Co
+  - company: Frec
+    role: Sr. Software Engineer
+    start: 2022
+    end: 2024
+    highlights:
+      - Led security testing engagement from vendor sourcing to execution ahead of public launch.
+      - Introduced a testing culture with required tooling across web and backend services, leading to a noticeable increase in quality.
+      - Advocated for and executed a plan to increase representation in the candidate pipeline and team.
+
+  - company: MainStreet
+    role: Sr. Software Engineer
+    start: 2021
+    end: 2022
+    highlights:
+      - Tech lead of the core product team — drove process and technical change responsible for millions of dollars in ARR.
+      - Led migration to GraphQL and investment in metrics & telemetry tooling.
+      - Replaced in-house authentication scheme with Auth0.
+      - Introduced testing culture using react-testing-library and supertest, now woven into the fabric of development.
+
+  - company: Twitter
+    role: Sr. Software Engineer
+    start: 2016
+    end: 2021
+    highlights:
+      - Introduced, scaled, and maintained GraphQL at Twitter — taught internal classes, consulted on schema design, and led migration of high-value product surfaces away from REST.
+      - Redesigned push & SMS notification delivery pipeline, yielding ~$10M in annual hardware savings while improving delivery rates.
+      - Led company-wide migration from Twitter's legacy HTTP framework to Finatra and GraphQL across hundreds of endpoints.
+      - Mentored apprentices from non-traditional CS backgrounds through Twitter's apprenticeship program.
+
+  - company: VictorOps
     role: Software Engineer
-    start: 2019-06
-    end: 2021-12
-    location: San Francisco, CA
-    description: >
-      Full-stack engineer on the consumer-facing web product.
+    start: 2014
+    end: 2016
     highlights:
-      - Built real-time notification system serving 2M daily active users.
-      - Migrated monolith authentication to OAuth 2.0, unblocking mobile team.
-      - Mentored two junior engineers through code review and pair programming.
-
-  - company: Startup Inc
-    role: Junior Software Engineer
-    start: 2018-07
-    end: 2019-05
-    location: San Francisco, CA
-    description: >
-      Early engineer on a B2B SaaS product.
-    highlights:
-      - Implemented billing integration with Stripe, enabling first paid customers.
-      - Wrote end-to-end test suite that caught three critical regressions pre-launch.
+      - Built iCalendar export for on-call schedules, handling timezone complexity and continuously changing overrides.
+      - Refactored distributed Akka-based service components, improving readability and maintainability.
+      - Represented engineering at conferences and meetups alongside the marketing team.
 
 education:
-  - school: University of California, Davis
-    degree: B.S. Computer Science
-    year: 2018
+  - school: University of Colorado at Boulder
+    degree: B.S. Business Administration, Leeds School of Business
+    note: Minor in Computer Science · Certificate in Socially Responsible Business
+    year: 2014
 
 skills:
-  languages: [Ruby, Python, TypeScript, Go]
-  tools: [Rails, React, PostgreSQL, Kubernetes, Terraform]
-  practices: [TDD, CI/CD, System Design, Technical Writing]
+  languages: [JavaScript, TypeScript, Scala, Ruby]
+  tools: [GraphQL, React, Auth0, Akka, Finatra, PostgreSQL]
+  practices: [TDD, Technical Leadership, Mentoring, System Design]
